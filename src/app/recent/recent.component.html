@@ -1,0 +1,19 @@
+<div class="d-flex flex-wrap">
+    <div *ngFor="let item of items()">
+        <div class="card mx-2 my-2" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title" style="margin-bottom: 16px;">{{item.searchQuery}}</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">{{ item.createdAt | date:'dd MMMM HH:mm:ss' }}
+                </h6>
+                <ul class="list-group list-group-flush">
+                    <!-- <div *ngFor="let key of item.results">
+                        <li class="list-group-item">Amazon: {{key}} products</li>
+                    </div> -->
+                    <li class="list-group-item">Amazon: {{item.results.AmazonScrapper}} products</li>
+                    <li class="list-group-item">Ebay: {{item.results.EbayScrapper}} products</li>
+                    <li class="list-group-item">Time Taken: {{item.timeTaken}} seconds</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
