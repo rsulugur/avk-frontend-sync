@@ -1,8 +1,0 @@
-<div class="d-flex my-2">
-  <input type="text" class="form-control form-control-lg" id="search-input" [(ngModel)]="searchQuery"
-    placeholder="Search...">
-  <div>
-    <button *ngIf="!apiService.isLoading()" class="btn btn-primary btn-lg mx-2" (click)="onSearch()">Search</button>
-    <button *ngIf="apiService.isLoading()" class="btn btn-success btn-lg mx-2" disabled=true>Searching...</button>
-  </div>
-</div>

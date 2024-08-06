@@ -1,14 +1,13 @@
-import { computed, Injectable, Signal, signal, WritableSignal } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { catchError, timeout } from 'rxjs/operators';
-import { Product } from '../product/product.model';
 import { Audit } from './audit.model';
 
 @Injectable({
     providedIn: 'root'
 })
-export class RecentSearchService {
+export class AuditService {
     private apiUrl = 'http://localhost:8080/v1/recent';
     recentProducts$: BehaviorSubject<Audit[]> = new BehaviorSubject<Audit[]>([]);
 

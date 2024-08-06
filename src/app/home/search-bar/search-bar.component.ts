@@ -1,9 +1,10 @@
-import { ChangeDetectionStrategy, Component, inject, signal, WritableSignal } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
-import { ApiService } from '../api.service';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { ApiService } from 'src/app/home/home.service';
+
+
 @Component({
   selector: 'app-search-bar',
   standalone: true,
@@ -13,8 +14,8 @@ import { CommonModule } from '@angular/common';
     CommonModule
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  templateUrl: './search.component.html',
-  styleUrls: ['./search.component.css']
+  templateUrl: './search-bar.component.html',
+  styleUrls: ['./search-bar.component.css']
 })
 export class SearchBarComponent {
   searchQuery: string = '';

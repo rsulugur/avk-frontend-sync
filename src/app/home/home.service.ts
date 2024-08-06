@@ -1,8 +1,8 @@
-import { computed, Injectable, Signal, signal, WritableSignal } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { Injectable, signal, WritableSignal } from '@angular/core';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { catchError, timeout } from 'rxjs/operators';
-import { Product } from './product.model';
+import { Product } from './search-results/search-result/search-result.model';
 
 @Injectable({
     providedIn: 'root'

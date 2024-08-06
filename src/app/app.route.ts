@@ -1,13 +1,18 @@
 import { AuthGuard } from "./auth.guard";
-import { DemoComponent } from "./demo/demo.component";
 import { LoginComponent } from "./login/login.component";
-import { ProductComponent } from "./product/product.component";
-import { RecentComponent } from "./recent/recent.component";
+import { AuditComponent } from "./audit/audit.component";
+import { HomeComponent } from "./home/home.component";
 
 export const routes: any = [
-    { path: '', redirectTo: '/crawl', pathMatch: 'full' }, // Redirect to home by default
-    { path: 'login', component: LoginComponent },
-    { path: 'demo', component: DemoComponent },
-    { path: 'crawl', component: ProductComponent, canActivate: [AuthGuard] },
-    { path: 'recent', component: RecentComponent, canActivate: [AuthGuard] }
+    { path: '', redirectTo: '/avk', pathMatch: 'full' },
+    {
+        path: 'avk',
+        children: [
+            { path: '', redirectTo: 'crawl', pathMatch: 'full' },
+            { path: 'crawl', component: HomeComponent, canActivate: [AuthGuard] },
+            { path: 'audit', component: AuditComponent, canActivate: [AuthGuard] }
+        ]
+    },
+    { path: 'login', component: LoginComponent }
 ]
+
