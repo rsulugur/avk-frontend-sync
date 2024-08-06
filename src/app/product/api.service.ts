@@ -9,8 +9,8 @@ import { Product } from './product.model';
 })
 export class ApiService {
 
-    // private apiUrl = 'http://localhost:3000/products'; // Replace with your API URL
-    private apiUrl = 'http://localhost:8080/v1/fetch/products';
+    private apiUrl = 'http://localhost:3000/products'; // Replace with your API URL
+    // private apiUrl = 'http://localhost:8080/v1/fetch/products';
     fetchedProducts = new BehaviorSubject<Product[]>([]);
     isLoading: WritableSignal<boolean> = signal(false);
 

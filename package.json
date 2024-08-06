@@ -20,6 +20,7 @@
     "@angular/router": "^17.3.12",
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.11.3",
     "jquery": "^3.7.1",
     "popper.js": "^1.16.1",
     "rxjs": "~7.8.0",

@@ -8,11 +8,13 @@ import { ProductComponent } from './product/product.component';
 import { RouterModule } from '@angular/router';
 import { routes } from './app.route';
 import { LoginComponent } from './login/login.component';
+import { DemoComponent } from './demo/demo.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DemoComponent
   ],
   imports: [
     BrowserModule,

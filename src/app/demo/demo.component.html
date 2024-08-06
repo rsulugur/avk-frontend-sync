@@ -1,0 +1,30 @@
+<div class="container mt-5" *ngFor="let product of products; let i = index">
+    <div class="card mb-4">
+        <div class="card-header bg-primary text-white">
+            {{ product.productName }}
+        </div>
+        <div class="card-body">
+            <p class="card-text">{{ product.productDescription }}</p>
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col" (click)="sortProduct('link', i)">Link</th>
+                            <button scope="col" type="button" class="btn btn-outline-light w-100"
+                              (click)="sortProduct('price', i)"><b>Price</b>
+                                <i class="bi bi-arrow-down" *ngIf="sortDirection[i]['price']"></i>
+                                <i class="bi bi-arrow-up" *ngIf="!sortDirection[i]['price']"></i>
+                            </button>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let link of product.links">
+                            <td><a [href]="link.url" target="_blank">{{link.url}}</a></td>
+                            <td>${{ link.price }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
