@@ -17,7 +17,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let link of product().links">
+                    <!-- <tr *ngFor="let link of product().links">
+                        <td><a [href]="link.url" target="_blank">{{link.url}}</a></td>
+                        <td>${{ link.price }}</td>
+                    </tr> -->
+                    <tr
+                      *ngFor="let link of product().links | paginate: { id: randomid, itemsPerPage: 4, currentPage: p }">
                         <td><a [href]="link.url" target="_blank">{{link.url}}</a></td>
                         <td>${{ link.price }}</td>
                     </tr>
@@ -25,4 +30,6 @@
             </table>
         </div>
     </div>
+    <pagination-controls class="d-flex justify-content-end" [id]="randomid"
+      (pageChange)="p = $event"></pagination-controls>
 </div>
