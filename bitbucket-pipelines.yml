@@ -8,10 +8,10 @@ pipelines:
           - docker
           - maven
         script:
-          - docker build -t avk-ui .
+          - docker build -t avk-ui-repo .
           - pipe: atlassian/aws-ecr-push-image:2.4.2
             variables:
               AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
               AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
               AWS_DEFAULT_REGION: us-east-1
-              IMAGE_NAME: avk-ui
+              IMAGE_NAME: avk-ui-repo
