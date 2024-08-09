@@ -1,68 +1,68 @@
 {
     "products": [
         {
-            "productName": "Apple iPhone 13",
-            "productDescription": "The latest iPhone with A15 Bionic chip and improved camera features.",
+            "productName": "SamSungS21Ultra",
+            "productDescription": "1. Triple camera setup\n2. 108MP main sensor\n3. 100x zoom capabilities\n4. 6.8-inch Dynamic AMOLED display\n5. 120Hz refresh rate\n6. Exynos 2100 chipset\n7. 5,000mAh battery\n8. 12GB of RAM\n9. 5G connectivity\n10. S Pen support",
             "links": [
                 {
-                    "url": "https://example.com/iphone13-link1",
-                    "price": 100
+                    "detailedName": "Samsung Galaxy S21 Ultra 5G, US Version, 128GB, Phantom Black - Unlocked (Renewed)",
+                    "url": "https://www.amazon.com/Galaxy-S21-Ultra-5G-Smartphone/dp/B096T6Y623/ref=sr_1_1",
+                    "price": 303.0,
+                    "valid": true
                 },
                 {
-                    "url": "https://example.com/iphone13-link2",
-                    "price": 200
+                    "detailedName": "Samsung Galaxy S21 Ultra 5G, US Version, 128GB, Phantom Silver - Unlocked (Renewed)",
+                    "url": "https://www.amazon.com/Galaxy-S21-Ultra-5G-Smartphone/dp/B096T6JJ6J/ref=sr_1_2",
+                    "price": 299.0,
+                    "valid": true
                 },
                 {
-                    "url": "https://example.com/iphone13-link3",
-                    "price": 300
+                    "detailedName": "Samsung Galaxy S21 Ultra 5G, US Version, 256GB, Phantom Black - Unlocked (Renewed)",
+                    "url": "https://www.amazon.com/Galaxy-S21-Ultra-5G-Smartphone/dp/B096T56NRH/ref=sr_1_3",
+                    "price": 379.0,
+                    "valid": true
                 },
                 {
-                    "url": "https://example.com/iphone13-link1",
-                    "price": 400
+                    "detailedName": "Samsung Electronics Samsung Galaxy S21 Ultra 5G | Factory Unlocked Android Cell Phone | US Version 5G Smartphone | Pro-Grade Camera, 108MP High Res | 128GB, Black (SM-G998UZKAXAA) (Renewed)",
+                    "url": "https://www.amazon.com/Electronics-Unlocked-Smartphone-Pro-Grade-SM-G998UZKAXAA/dp/B08VL1Q7Z1/ref=sr_1_4",
+                    "price": 304.0,
+                    "valid": true
                 },
                 {
-                    "url": "https://example.com/iphone13-link2",
-                    "price": 500
+                    "detailedName": "Samsung Galaxy S21 Ultra 5G, US Version, 128GB, Phantom Black- for CDMA Carriers (Renewed)",
+                    "url": "https://www.amazon.com/Galaxy-S21-Ultra-5G-SM-G998UZKAXAA/dp/B0939K5M9Q/ref=sr_1_5",
+                    "price": 304.0,
+                    "valid": true
                 },
                 {
-                    "url": "https://example.com/iphone13-link3",
-                    "price": 600
-                }
-            ]
-        },
-        {
-            "productName": "Samsung Galaxy S21",
-            "productDescription": "Experience the new Galaxy with its powerful processor and stunning display.",
-            "links": [
-                {
-                    "url": "https://example.com/galaxy-s21-link1",
-                    "price": 699
+                    "detailedName": "Samsung Galaxy S21 Ultra 5G 128GB G998U Unlocked - Excellent",
+                    "url": "https://www.ebay.com/itm/255020221191",
+                    "price": 289.99,
+                    "valid": true
                 },
                 {
-                    "url": "https://example.com/galaxy-s21-link2",
-                    "price": 749
+                    "detailedName": "For Samsung Galaxy S21 /S21+ /S21 Ultra Shockproof Hard Case + Screen Protector",
+                    "url": "https://www.ebay.com/itm/313913655457",
+                    "price": 9.99,
+                    "valid": true
                 },
                 {
-                    "url": "https://example.com/galaxy-s21-link3",
-                    "price": 799
-                }
-            ]
-        },
-        {
-            "productName": "Dell XPS 13",
-            "productDescription": "A high-performance laptop with an InfinityEdge display and advanced features.",
-            "links": [
-                {
-                    "url": "https://example.com/dell-xps13-link1",
-                    "price": 999
+                    "detailedName": "NEW UNLOCKED SAMSUNG GALAXY S21 ULTRA 5G SM-G998U ALL COLORS AND MEMORY GSM+CDMA",
+                    "url": "https://www.ebay.com/itm/204252543375",
+                    "price": 314.88,
+                    "valid": true
                 },
                 {
-                    "url": "https://example.com/dell-xps13-link2",
-                    "price": 1049
+                    "detailedName": "New Sealed Samsung Galaxy S21 Ultra 5G SM-G998U 128GB/256GB Unlocked Smartphone",
+                    "url": "https://www.ebay.com/itm/226165401639",
+                    "price": 312.99,
+                    "valid": true
                 },
                 {
-                    "url": "https://example.com/dell-xps13-link3",
-                    "price": 1099
+                    "detailedName": "Samsung G998 Galaxy S21 Ultra 5G 128GB Unlocked Smartphone - Excellent",
+                    "url": "https://www.ebay.com/itm/386019291379",
+                    "price": 279.95,
+                    "valid": true
                 }
             ]
         }

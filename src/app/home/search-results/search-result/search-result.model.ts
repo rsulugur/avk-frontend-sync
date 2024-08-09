@@ -1,4 +1,5 @@
 export interface ProductLink {
+    detailedName: string
     url: string;
     price: number;
 }

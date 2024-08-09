@@ -1,4 +1,4 @@
-<div class="card mb-4">
+<div class="card">
     <div class="card-header bg-primary text-white">
         {{ product().productName }}
     </div>
@@ -8,6 +8,7 @@
             <table class="table table-bordered table-hover">
                 <thead class="thead-dark">
                     <tr>
+                        <th scope="col">Detailed Name</th>
                         <th scope="col">Link</th>
                         <button scope="col" type="button" class="btn btn-outline-light w-100"
                           (click)="sortProduct('price')"><b>Price</b>
@@ -17,19 +18,16 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- <tr *ngFor="let link of product().links">
-                        <td><a [href]="link.url" target="_blank">{{link.url}}</a></td>
-                        <td>${{ link.price }}</td>
-                    </tr> -->
                     <tr
-                      *ngFor="let link of product().links | paginate: { id: randomid, itemsPerPage: 4, currentPage: p }">
-                        <td><a [href]="link.url" target="_blank">{{link.url}}</a></td>
-                        <td>${{ link.price }}</td>
+                      *ngFor="let link of product().links | paginate: { id: randomid, itemsPerPage: 7, currentPage: p }">
+                        <td class="overflow-hidden">{{ link.detailedName }}</td>
+                        <td class="overflow-hidden"><a [href]="link.url" target="_blank">{{link.url}}</a></td>
+                        <td class="overflow-hidden">${{ link.price }}</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
-    <pagination-controls class="d-flex justify-content-end" [id]="randomid"
-      (pageChange)="p = $event"></pagination-controls>
+    <pagination-controls class="d-flex justify-content-center align-items-center" [id]="randomid" previousLabel=""
+      nextLabel="" (pageChange)="p = $event"></pagination-controls>
 </div>

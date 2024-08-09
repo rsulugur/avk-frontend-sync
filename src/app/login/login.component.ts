@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../auth/auth.service';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -17,8 +17,7 @@ export class LoginComponent {
 
   login(): void {
     if (this.username && this.password) {
-      const token = 'fake-token';
-      this.authService.login(token);
+      this.authService.login(this.username, this.password)
     }
   }
 }

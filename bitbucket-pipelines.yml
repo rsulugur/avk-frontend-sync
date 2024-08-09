@@ -1,33 +1,17 @@
-image: node:14
+image: atlassian/default-image:3
 
 pipelines:
   default:
-    - parallel:
-      - step:
-          name: Install Dependencies
-          caches:
-            - node
-          script:
-            - npm install
-      - step:
-          name: Lint Code
-          script:
-            - npm run lint
-      - step:
-          name: Build and Test
-          caches:
-            - node
-          script:
-            - npm install
-            - npm run test -- --watch=false --browsers=ChromeHeadless
-            - npm run build -- --prod
-      - step:
-          name: Security Scan
-          script:
-            # Example: Run a security scan for sensitive data.
-            # You can use any security tool that suits your project.
-            - pipe: atlassian/git-secrets-scan:0.5.1
-
-definitions:
-  caches:
-    node: ~/.npm
+    - step:
+        name: Build and Test
+        caches:
+          - docker
+          - maven
+        script:
+          - docker build -t avk-ui .
+          - pipe: atlassian/aws-ecr-push-image:2.4.2
+            variables:
+              AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+              AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+              AWS_DEFAULT_REGION: us-east-1
+              IMAGE_NAME: avk-ui

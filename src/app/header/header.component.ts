@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../auth/auth.service';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -13,6 +13,4 @@ import { CommonModule } from '@angular/common';
 export class HeaderComponent {
 
   authService = inject(AuthService);
-
-
 }
