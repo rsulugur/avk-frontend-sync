@@ -1,4 +1,13 @@
 <div class="d-flex flex-wrap">
+
+    <div *ngIf="items().length <= 0" class="d-flex justify-content-center align-items-center border border-primary">
+        <div class="alert alert-secondary text-center">
+            No Items Found
+        </div>
+    </div>
+
+
+
     <div *ngFor="let item of items()">
         <div class="card mx-2 my-2" style="width: 18rem;">
             <div class="card-body">
@@ -16,4 +25,5 @@
             </div>
         </div>
     </div>
+
 </div>

@@ -1,9 +1,9 @@
-.overflow-hidden {
+/* .overflow-hidden {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 150px; /* Adjust the width as needed */
-}
-::ng-deep .ngx-pagination {
+  max-width: 150px;
+} */
+/* ::ng-deep .ngx-pagination {
   margin: 0rem auto;
-}
+} */

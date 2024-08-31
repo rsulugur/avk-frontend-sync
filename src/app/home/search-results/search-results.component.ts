@@ -1,4 +1,4 @@
-import { Component, DestroyRef, inject } from '@angular/core';
+import { ChangeDetectorRef, Component, computed, DestroyRef, inject, signal, Signal, WritableSignal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { Product } from "./search-result/search-result.model"
@@ -14,13 +14,18 @@ import { SearchResultComponent } from './search-result/search-result.component';
 })
 export class SearchResultsComponent {
   apiService: ApiService = inject(ApiService)
-  destroyRef = inject(DestroyRef);
-  products: Product[] = [];
 
-  constructor() {
-    const sub = this.apiService.fetchedProducts.subscribe({
-      next: data => this.products = data
+  constructor(private cdr: ChangeDetectorRef, private destroyRef: DestroyRef) { }
+
+  products: WritableSignal<Product[]> = signal<Product[]>([]);
+
+  ngOnInit(): void {
+    this.apiService.fetchedProducts.subscribe({
+      next: (data: Product[]) => {
+        console.log("Push Called")
+        this.cdr.detectChanges();
+        this.products.update(previous => [...previous, ...data])
+      }
     })
-    this.destroyRef.onDestroy(() => sub.unsubscribe())
   }
 }

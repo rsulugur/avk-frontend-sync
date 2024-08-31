@@ -1,7 +1,47 @@
-<div class="card">
+<!-- <div class="card">
     <div class="card-header bg-primary text-white">
         {{ product().productName }}
     </div>
+
+</div> -->
+<!-- product-card.component.html -->
+<div>
+    <div class="container my-4">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="row g-0">
+                        <!-- Image Section -->
+                        <div class="col-md-1 d-flex align-items-center">
+                            <img [src]="source2image[product().source]" class="img-fluid rounded-start"
+                              alt="Product Image">
+                        </div>
+                        <!-- Description Section -->
+                        <div class="col-md-9" (click)="open()">
+                            <div class="card-body">
+                                <p class="card-title">{{product().name}}</p>
+                                <!-- <p class="card-text">This is a brief description of the product.</p> -->
+                                <!-- <p class="card-text"><strong>Price:</strong> $99.99</p> -->
+                                <!-- <p class="card-text">
+                                <small class="text-muted">Rating: ★★★★☆</small>
+                            </p> -->
+                            </div>
+                        </div>
+                        <!-- Link Section -->
+                        <div class="col border d-flex align-items-center justify-content-center">
+                            <a href="https://www.example.com" class="btn btn-primary">
+                                <i class="bi bi-box-arrow-up-right me-2"></i> Link
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button> -->
+<!-- 
     <div class="card-body">
         <p class="card-text">{{ product().productDescription }}</p>
         <div class="table-responsive">
@@ -18,8 +58,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr
-                      *ngFor="let link of product().links | paginate: { id: randomid, itemsPerPage: 7, currentPage: p }">
+                    <tr *ngFor="let link of product().links | paginate: { id: randomid, itemsPerPage: 7, currentPage: p }">
                         <td class="overflow-hidden">{{ link.detailedName }}</td>
                         <td class="overflow-hidden"><a [href]="link.url" target="_blank">{{link.url}}</a></td>
                         <td class="overflow-hidden">${{ link.price }}</td>
@@ -29,5 +68,4 @@
         </div>
     </div>
     <pagination-controls class="d-flex justify-content-center align-items-center" [id]="randomid" previousLabel=""
-      nextLabel="" (pageChange)="p = $event"></pagination-controls>
-</div>
+      nextLabel="" (pageChange)="p = $event"></pagination-controls> -->

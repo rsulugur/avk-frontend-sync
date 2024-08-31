@@ -20,6 +20,7 @@ export class AuditComponent implements OnInit {
     const subscription = this.recentSearchService.recentProducts$.subscribe({
       next: data => this.items.set(data)
     })
+    this.items().length > 0
     this.destroyRef.onDestroy(() => subscription.unsubscribe())
     this.recentSearchService.getRecentProducts();
   }

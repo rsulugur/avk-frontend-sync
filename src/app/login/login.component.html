@@ -1,13 +1,54 @@
-<div class="container my-3">
-    <form (ngSubmit)="login()">
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="email" [(ngModel)]="username" name="username" required>
+<div class="container mt-5">
+    <ul class="nav nav-tabs" id="authTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login" type="button"
+              role="tab" aria-controls="login" aria-selected="true">Login</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="signup-tab" data-bs-toggle="tab" data-bs-target="#signup" type="button"
+              role="tab" aria-controls="signup" aria-selected="false">Signup</button>
+        </li>
+    </ul>
+    <div class="tab-content" id="authTabsContent">
+        <!-- Login Form -->
+        <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+            <form class="mt-4" (ngSubmit)="onLogin(loginForm)" #loginForm="ngForm">
+                <div class="mb-3">
+                    <label for="loginEmail" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="loginEmail" ngModel name="loginEmail" email required
+                      #email="ngModel">
+                </div>
+                <div class="mb-3">
+                    <label for="loginPassword" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="loginPassword" ngModel name="loginPassword" required
+                      minlength="3">
+                </div>
+                <button type="submit" class="btn btn-primary" *ngIf="!authService.isLoading">Login</button>
+                <button type="submit" class="btn btn-success" *ngIf="authService.isLoading">Logging in...</button>
+            </form>
         </div>
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="password" [(ngModel)]="password" name="password" required>
+        <!-- Signup Form -->
+        <div class="tab-pane fade" id="signup" role="tabpanel" aria-labelledby="signup-tab">
+            <form class="mt-4" (ngSubmit)="onSignup()">
+                <div class="mb-3">
+                    <label for="signupEmail" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="signupEmail" [(ngModel)]="signupData.email"
+                      name="signupEmail" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="signupPassword" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="signupPassword" [(ngModel)]="signupData.password"
+                      name="signupPassword" required>
+                </div>
+                <div class="mb-3">
+                    <label for="signupConfirmPassword" class="form-label">Confirm Password</label>
+                    <input type="email" class="form-control" id="signupConfirmPassword"
+                      [(ngModel)]="signupData.confirmPassword" name="signupConfirmPassword" required>
+                </div>
+                <button type="submit" class="btn btn-primary" *ngIf="!authService.isLoading">Signup</button>
+                <button type="submit" class="btn btn-success" *ngIf="authService.isLoading">Signing up...</button>
+            </form>
         </div>
-        <button type="submit" class="btn btn-primary">Log in</button>
-    </form>
+    </div>
 </div>

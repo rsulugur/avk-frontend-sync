@@ -1,8 +1,26 @@
-<div class="d-flex my-2">
-    <input type="text" class="form-control form-control-lg" id="search-input" [(ngModel)]="searchQuery"
-      placeholder="Search...">
-    <div>
-        <button *ngIf="!apiService.isLoading()" class="btn btn-primary btn-lg mx-2" (click)="onSearch()">Search</button>
-        <button *ngIf="apiService.isLoading()" class="btn btn-success btn-lg mx-2" disabled=true>Searching...</button>
+<div class="my-2 d-flex">
+  <input type="text" class="form-control form-control-lg" id="search-input" [(ngModel)]="searchQuery"
+    placeholder="Search...">
+  <div>
+    <button class="btn btn-info btn-lg mx-2" (click)="onSearch()">Search</button>
+
+    <!-- <button *ngIf="!apiService.isLoading()" class="btn btn-info btn-lg mx-2" (click)="onSearch()">Search</button> -->
+    <!-- <button *ngIf="apiService.isLoading()" class="btn btn-success btn-lg mx-2" disabled=true>Searching...</button> -->
+  </div>
+</div>
+<!-- app-checkbox-list.component.html -->
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-6" *ngFor="let group of checkboxGroups; let i = index">
+      <div *ngFor="let checkbox of group">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" [id]="checkbox.id" [value]="checkbox.value"
+            [(ngModel)]="checkbox.selected">
+          <label class="form-check-label" [for]="checkbox.id">
+            {{ checkbox.label }}
+          </label>
+        </div>
+      </div>
     </div>
+  </div>
 </div>

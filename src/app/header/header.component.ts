@@ -11,6 +11,10 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-
   authService = inject(AuthService);
+  username: string | null = "user";
+
+  ngOnInit(): void {
+    this.username = sessionStorage.getItem('X-Auth-Username');
+  }
 }
